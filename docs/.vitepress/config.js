@@ -1,13 +1,21 @@
+import { mdPlugin } from "./plugin";
+import path from 'path'
 export default {
-  // site-level options
-  title: "VitePress",
-  description: "Just playing around.",
+  title: "Lok的超级组件库",
+  description: "牛逼牛逼业务组件",
   lang: "en-US",
 
   themeConfig: {
-    // theme-level options
+    socialLinks: [
+      {
+        icon: {
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitLab</title><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>',
+        },
+        link: "http://gitlab.go-goal.cn/fundweb/fundComponents/-/tree/changeset?ref_type=heads",
+      },
+    ],
     nav: [
-      { text: "Guide", link: "/guide" },
+      { text: "Base", link: "/base/guide" },
       {
         text: "Dropdown Menu",
         items: [
@@ -20,26 +28,15 @@ export default {
     sidebar: {
       // This sidebar gets displayed when a user
       // is on `guide` directory.
-      "/guide/": [
+      "/base/": [
         {
-          text: "Guide",
+          text: "组件",
           items: [
-            { text: "Index", link: "/guide/" },
-            { text: "One", link: "/guide/one" },
-            { text: "Two", link: "/guide/two" },
-          ],
-        },
-      ],
-
-      // This sidebar gets displayed when a user
-      // is on `config` directory.
-      "/config/": [
-        {
-          text: "Config",
-          items: [
-            { text: "Index", link: "/config/" },
-            { text: "Three", link: "/config/three" },
-            { text: "Four", link: "/config/four" },
+            { text: "guide", link: "../base/guide" },
+            { text: "GFEmpty", link: "../base/empty" },
+            // { text: 'guide', link: '/base/guide' },
+            // { text: 'GFAnchorNav', link: '/base/anchor-nav' },
+            // { text: 'GFAnchor', link: '/base/anchor' },
           ],
         },
       ],
@@ -47,6 +44,24 @@ export default {
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2019-present Evan You",
+    },
+  },
+  markdown: {
+    theme: {
+      light: "material-theme-lighter",
+      dark: "material-theme-palenight",
+    } /* https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes */,
+    config: (md) => mdPlugin(md),
+    lineNumbers: true,
+  },
+  vite: {
+    resolve: {
+      alias: {
+        "@lok/fund-base": path.resolve(
+          __dirname,
+          "../../packages/base/src/index.ts"
+        ),
+      },
     },
   },
 };
