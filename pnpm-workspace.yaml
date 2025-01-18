@@ -1,5 +1,5 @@
 # // 指定有多少包
-package:
- -play #测试代码
- -docs # 组件文档
- -"packages/**"
+packages:
+ - play #测试代码
+ - docs # 组件文档
+ - "packages/**"
