@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev":"pnpm -C play dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc:dev":"pnpm -C docs dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lok-components": "file:packages/components",
+    "lok-theme": "workspace:^",
+    "lok-utils": "workspace:^",
     "typescript": "^5.7.3",
-    "vue": "^3.5.13",
-    "lok-components":"file:packages/components",
-    "lok-theme":"workspace:^",
-    "lok-utils":"workspace:^"
+    "vue": "^3.5.13"
   }
 }
