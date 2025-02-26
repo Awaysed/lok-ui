@@ -6,11 +6,11 @@ title: GFTable-\@lok/fund-base
 
 暂无数据组件
 
-<!-- ## 基础用法
+## 基础用法
 
 ::: demo
 base/empty/ex1
-::: -->
+:::
 
 ## 尺寸大小
 
@@ -18,7 +18,7 @@ base/empty/ex1
 base/empty/ex2
 :::
 
-<!-- ## 使用基金线内部字体
+## 使用基金线内部字体
 
 ::: demo
 base/empty/ex3
@@ -34,7 +34,7 @@ base/empty/ex4
 
 ::: demo
 base/empty/ex5
-::: -->
+:::
 
 ## props
 

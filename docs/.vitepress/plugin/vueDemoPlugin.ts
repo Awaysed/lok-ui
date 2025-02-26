@@ -11,7 +11,7 @@ const docsDirName = "docs";
 const docRoot = resolve(projRoot, docsDirName);
 
 export default {
-    render(tokens, idx) {
+ render(tokens, idx) {
         if (tokens[idx].nesting === 1) {
             const sourceFileToken = tokens[idx + 2];
             let htmlStr = "";
@@ -28,12 +28,15 @@ export default {
             }
 
             // opening tag
-            return `
+          const str =  `
         <VPDemo 
         codeStr="${encodeURIComponent(codeStr)}" 
         htmlStr="${encodeURIComponent(htmlStr)}" 
         codePath="${codePath}"
         >`;
+        console.log(444,str);
+        
+        return str
         } else {
             // closing tag
             return "</VPDemo>\n";

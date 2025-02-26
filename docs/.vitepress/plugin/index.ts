@@ -3,6 +3,8 @@ import enumTablePlugin from './enumTablePlugin'
 import vueDemoPlugin from './vueDemoPlugin'
 
 export const mdPlugin = (md) => {
+    // console.log(3333,md);
+    
     usePlugin(md, 'demo', vueDemoPlugin)
     usePlugin(md, 'enum', enumTablePlugin)
 }

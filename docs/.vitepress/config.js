@@ -51,7 +51,10 @@ export default {
       light: "material-theme-lighter",
       dark: "material-theme-palenight",
     } /* https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes */,
-    config: (md) => mdPlugin(md),
+    config: (md) => {
+      console.log(22222);
+      mdPlugin(md)
+    },
     lineNumbers: true,
   },
   vite: {
